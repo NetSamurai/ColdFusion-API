@@ -68,7 +68,9 @@ This is how the API maps a definition name that is used to call the API, to the 
 <!--- My API Definition #1 --->
 <cfinvoke method="executeAPICall" returnvariable="returned_array" component="cfapi.config.settings">
     <cfinvokeargument name="api_called" value="whatever_get" />
+    <!--- To disable the logging feature on a single call, set api_log to false --->
     <cfinvokeargument name="api_log" value="true" />
+    <!--- To always use local CFC call, not webservice set api_application to 'scheduler' --->
     <cfinvokeargument name="api_application" value="whatever_app" />
     <cfinvokeargument name="api_user" value="#session.user_id#" />
     <cfinvokeargument name="parameter_1" value="#passed_value_1#" />
@@ -77,13 +79,7 @@ This is how the API maps a definition name that is used to call the API, to the 
 *Note: Each parameter is numeric (up to 20) and in the order which matches the source component function.*
 
 ```ColdFusion
-<!--- To disable the logging feature on a single call --->
-<cfinvokeargument name="api_log" value="false" />
-
-<!--- Always use local CFC invocation instead of WSDL for a single call --->
-<cfinvokeargument name="api_application" value="scheduler" />
-
-<!--- Example Function that might be called by this invoker --->
+<!--- Example Function in whatever.cfc that might be called by this invoker --->
 <cffunction name="getWhatever" returntype="array" access="public" output="no" hint="Gets color codes which match the parameter">
     <cfargument name="whatever_parameter" type="string" required="yes" />
 
