@@ -1,16 +1,21 @@
 # ColdFusion API
 
 **Questions & Answers**
+
 Q: Why shouldn't I use the native ColdFusion 2016 API?
 A: There is no reason not to use it, this module was developed at the same time that one was released.
 
 Q: What does this package do that the ColdFusion 2016 API does not do?
 A: It should work more expansively than the original API, allowing more remote calls for more datatypes, as well as offer API usage statistics and logging per call.
 
+Q: Does this work with SOAP or Rest?
+A: Although it mostly works with both, it has better SOAP compatibility.
+
 **Install API Front-end**
 1) Copy the files in the same directory structure from the repository to a local drive.
 
 2) Find and replace the following strings in all included files:
+
 | Text to Replace  | Replace with |
 | ------------- | ------------- |
 | yourserver | ColdFusion Server Hostname |
@@ -28,7 +33,8 @@ A: It should work more expansively than the original API, allowing more remote c
 6) Disable web traffic to https://yourserver/cfapi/config to protect your configuration.
 
 **Add API Definitions**
-*This is how the API maps a definition name that is used to call the API, to the method that programatically gets invoked.*
+
+This is how the API maps a definition name that is used to call the API, to the method that programatically gets invoked.
 
 1) Open /cfapi/config/settings.cfc and note the following structure:
 ```ColdFusion
@@ -44,6 +50,7 @@ A: It should work more expansively than the original API, allowing more remote c
 
 **API Log Set-up (optional)**
 1) Create and give permissions to the following table: API_LOG
+
 | Column Name  | Column Type | Data Example
 | ------------- | ------------- | ------------- |
 | time_stamp | date | 03/13/2018 16:15:21 |
@@ -57,8 +64,9 @@ A: It should work more expansively than the original API, allowing more remote c
 **Implementing an API Call**
 1) The API wrapper can be invoked like so:
 ```ColdFusion
+<!--- My API Definition #1 --->
 <cfinvoke method="executeAPICall" returnvariable="returned_array" component="cfapi.components.yourcomponent">
-    <cfinvokeargument name="api_called" value="rits_dev_ips" />
+    <cfinvokeargument name="api_called" value="your_api_definition" />
     <cfinvokeargument name="api_log" value="true" />
     <cfinvokeargument name="api_application" value="your_application_name" />
     <cfinvokeargument name="api_user" value="#session.user_id#" />
@@ -67,8 +75,8 @@ A: It should work more expansively than the original API, allowing more remote c
 ```
 *Note: Each parameter is numeric and in the order which matches the source component function.*
 
-2) To disable the logging feature on a single call:
 ```ColdFusion
+<!--- To disable the logging feature on a single call --->
 <cfinvokeargument name="api_log" value="false" />
 ```
 
