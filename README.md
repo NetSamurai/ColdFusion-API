@@ -49,7 +49,7 @@ This is how the API maps a definition name that is used to call the API, to the 
 2) Change (and multiply) to match your own definition(s) of CFC Method invocations.
 
 **API Log Set-up (Optional)**
-1) Create and give permissions to yourdbuser1 following table: API_LOG
+1) Create table: "API_LOG" and give SQL permissions to "yourdbuser1".
 
 | Column Name  | Column Type | Data Example
 | ------------- | ------------- | ------------- |
