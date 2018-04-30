@@ -3,12 +3,15 @@
 **Questions & Answers**
 
 Q: Why shouldn't I use the native ColdFusion 2016 API?
+
 A: There is no reason not to use it, this module was developed at the same time that one was released.
 
 Q: What does this package do that the ColdFusion 2016 API does not do?
+
 A: It should work more expansively than the original API, allowing more remote calls for more datatypes, as well as offer API usage statistics and logging per call.
 
 Q: Does this work with SOAP or Rest?
+
 A: Although it mostly works with both, it has better SOAP compatibility.
 
 **Install API Front-end**
@@ -26,7 +29,7 @@ A: Although it mostly works with both, it has better SOAP compatibility.
 3) Copy the /cfapi folder from the temporary folder to the ColdFusion web server. 
 *Note: Do not rename this folder to a reserved word in ColdFusion Server like "api".*
 
-4) Navigate to https://yourserver/cfapi and you should see a interface similar to <a href="http://htmlpreview.github.io/?https://github.com/ravenmyst/ColdFusion-API/blob/master/cfapi/documentation/screenshot1.png" target="_blank">example 1</a> and <a href="http://htmlpreview.github.io/?https://github.com/ravenmyst/ColdFusion-API/blob/master/cfapi/documentation/screenshot1.png" target="_blank">example 2</a>.
+4) Navigate to https://yourserver/cfapi and you should see a interface similar to <a href="https://github.com/ravenmyst/ColdFusion-API/blob/master/cfapi/documentation/screenshot1.png" target="_blank">Example 1</a> and <a href="https://github.com/ravenmyst/ColdFusion-API/blob/master/cfapi/documentation/screenshot1.png" target="_blank">Example 2</a>.
 
 5) Add any CFC's you wish to use to /cfapi/component or any subdirectory in /cfapi. The API will automatically organize them by folder on the front-end.
 
@@ -48,8 +51,8 @@ This is how the API maps a definition name that is used to call the API, to the 
 
 2) Change (and multiply) to match your own definition(s) of CFC Method invocations.
 
-**API Log Set-up (optional)**
-1) Create and give permissions to the following table: API_LOG
+**API Log Set-up (Optional)**
+1) Create and give permissions to yourdbuser1 following table: API_LOG
 
 | Column Name  | Column Type | Data Example
 | ------------- | ------------- | ------------- |
