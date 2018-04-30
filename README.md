@@ -73,7 +73,7 @@ This is how the API maps a definition name that is used to call the API, to the 
     <cfinvokeargument name="parameter_1" value="#passed_value_1#" />
 </cfinvoke>
 ```
-*Note: Each parameter is numeric and in the order which matches the source component function.*
+*Note: Each parameter is numeric (up to 20) and in the order which matches the source component function.*
 
 ```ColdFusion
 <!--- To disable the logging feature on a single call --->
