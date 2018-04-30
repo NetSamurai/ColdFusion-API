@@ -2,16 +2,13 @@
 
 **Questions & Answers**
 
-Q: Why shouldn't I use the native ColdFusion 2016 API?
-
+Q: Why shouldn't I use the native ColdFusion 2016 API?<br />
 A: There is no reason not to use it, this module was developed at the same time that one was released.
 
-Q: What does this package do that the ColdFusion 2016 API does not do?
-
+Q: What does this package do that the ColdFusion 2016 API does not do?<br />
 A: It should work more expansively than the original API, allowing more remote calls for more datatypes, as well as offer API usage statistics and logging per call.
 
-Q: Does this work with SOAP or Rest?
-
+Q: Does this work with SOAP or Rest?<br />
 A: Although it mostly works with both, it has better SOAP compatibility.
 
 **Install API Front-end**
@@ -26,7 +23,7 @@ A: Although it mostly works with both, it has better SOAP compatibility.
 | yourdbuser1 | ColdFusion API Database User |
 | E:\inetpub\wwwroot\ | ColdFusion Server (www)root Directory |
 
-3) Copy the /cfapi folder from the temporary folder to the ColdFusion web server. 
+3) Copy the /cfapi folder from the temporary folder to the ColdFusion web server. <br />
 *Note: Do not rename this folder to a reserved word in ColdFusion Server like "api".*
 
 4) Navigate to https://yourserver/cfapi and you should see a interface similar to <a href="https://github.com/ravenmyst/ColdFusion-API/blob/master/cfapi/documentation/screenshot1.png" target="_blank">Example 1</a> and <a href="https://github.com/ravenmyst/ColdFusion-API/blob/master/cfapi/documentation/screenshot1.png" target="_blank">Example 2</a>.
