@@ -9,7 +9,7 @@ Q: What does this package do that the ColdFusion 2016 API does not do?<br />
 A: It should work more expansively than the original API, allowing more remote calls for more datatypes, as well as offer API usage statistics and logging per call.
 
 Q: Does this work with SOAP or Rest?<br />
-A: Although it mostly works with both, it has better SOAP compatibility.
+A: Although it mostly works with both, it was designed for SOAP.
 
 **Install API Front-end**
 1) Copy the files in the same directory structure from the repository to a local drive.
@@ -49,7 +49,7 @@ This is how the API maps a definition name that is used to call the API, to the 
 2) Change (and multiply) to match your own definition(s) of CFC Method invocations.
 
 **API Log Set-up (Optional)**
-1) Create table: "API_LOG" and give SQL permissions to "yourdbuser1".
+1) Create table: "API_LOG" and give permissions to "yourdbuser1" in SQL.
 
 | Column Name  | Column Type | Data Example
 | ------------- | ------------- | ------------- |
@@ -57,8 +57,8 @@ This is how the API maps a definition name that is used to call the API, to the 
 | api_called | varchar(256 bytes) | test_call |
 | api_method_called | varchar(256 bytes) | getTestCall |
 | calling_application | varchar(256 bytes) | test_application |
-| calling_user_id | varchar(256 bytes) | theUserLoggedIn |
-| calling_user_ip | varchar(256 bytes) | theIpLoggedIn |
+| calling_user_id | varchar(256 bytes) | user_one |
+| calling_user_ip | varchar(256 bytes) | 1.2.3.4 |
 | calling_parameters | clob | {theFullRequest:as,jsonKey:pair} |
 
 **Implementing an API Call**
@@ -84,7 +84,7 @@ This is how the API maps a definition name that is used to call the API, to the 
 ```
 
 **Blacklist Directory for Usage Statistics**
-1) Navigate to api_implementation.cfm and add any ignored directories to this array:
+1) Open /cfapi/documentation/api_implementation.cfm and add any ignored directories to this array:
 ```ColdFusion
 <cfset filtered_directory_array = [
                                     "ignoredDirectory1",
