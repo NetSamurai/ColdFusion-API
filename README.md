@@ -78,6 +78,9 @@ This is how the API maps a definition name that is used to call the API, to the 
 ```ColdFusion
 <!--- To disable the logging feature on a single call --->
 <cfinvokeargument name="api_log" value="false" />
+
+<!--- Always use local CFC invocation instead of WSDL for a single call --->
+<cfinvokeargument name="api_application" value="scheduler" />
 ```
 
 **Blacklist Directory for Usage Statistics**
