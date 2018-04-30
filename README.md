@@ -44,8 +44,8 @@ This is how the API maps a definition name that is used to call the API, to the 
 <!--- :: Whatever :: --->
 <cfset api_object = StructNew() />
 <cfset api_object.name = "whatever_get" />
-<cfset api_object.component = "cfapi.component.mycustomdirectory.whatever" />
-<cfset api_object.url = "https://www.yourserver.com/cfapi/component/mycustomdirectory/whatever.cfc?WSDL" />
+<cfset api_object.component = "cfapi.component.mydir.whatever" />
+<cfset api_object.url = "https://www.yourserver.com/cfapi/component/mydir/whatever.cfc?WSDL" />
 <cfset api_object.method = "getWhatever" />
 <cfset ArrayAppend(return_array, api_object) />
 ```
@@ -66,23 +66,9 @@ This is how the API maps a definition name that is used to call the API, to the 
 | calling_parameters | clob | {theFullRequest:as,jsonKey:pair} |
 
 **Implementing an API Call**
-1) The API wrapper can be invoked like so:
+1) Ensure the defined function is implemented in a CFC:
 ```ColdFusion
-<!--- My API Definition #1 --->
-<cfinvoke method="executeAPICall" returnvariable="returned_array" component="cfapi.config.settings">
-    <cfinvokeargument name="api_called" value="whatever_get" />
-    <!--- To disable the logging feature on a single call, set api_log to false --->
-    <cfinvokeargument name="api_log" value="true" />
-    <!--- To always use local CFC call, not webservice set api_application to 'scheduler' --->
-    <cfinvokeargument name="api_application" value="whatever_app" />
-    <cfinvokeargument name="api_user" value="#session.user_id#" />
-    <cfinvokeargument name="parameter_1" value="#passed_value_1#" />
-</cfinvoke>
-```
-*Note: Each parameter is numeric (up to 20) and in the order which matches the source component function.*
-
-```ColdFusion
-<!--- Example Function in whatever.cfc that might be called by this invoker --->
+<!--- Example function in whatever.cfc that will be called by this invoker --->
 <cffunction name="getWhatever" returntype="array" access="public" output="no" hint="Gets color codes which match the parameter">
     <cfargument name="whatever_parameter" type="string" required="yes" />
 
@@ -95,6 +81,20 @@ This is how the API maps a definition name that is used to call the API, to the 
     <cfreturn return_array />
 </cffunction>
 ```
+2) The API wrapper can be invoked like so:
+```ColdFusion
+<!--- Example in page.cfm to call the whatever_get api definition.  --->
+<cfinvoke method="executeAPICall" returnvariable="returned_array" component="cfapi.config.settings">
+    <cfinvokeargument name="api_called" value="whatever_get" />
+    <!--- To disable the logging feature on a single call, set api_log to false --->
+    <cfinvokeargument name="api_log" value="true" />
+    <!--- To always use local CFC call, not webservice set api_application to 'scheduler' --->
+    <cfinvokeargument name="api_application" value="whatever_app" />
+    <cfinvokeargument name="api_user" value="#session.user_id#" />
+    <cfinvokeargument name="parameter_1" value="#passed_value_1#" />
+</cfinvoke>
+```
+*Note: Each parameter is numeric (up to 20) and in the order which matches the source component function.*
 
 **Blacklist Directory for Usage Statistics**
 1) Open /cfapi/documentation/api_implementation.cfm and add any ignored directories to this array:

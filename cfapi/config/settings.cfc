@@ -4,8 +4,8 @@
 	<!--- :: Whatever :: --->
 	<cfset api_object = StructNew() />
 	<cfset api_object.name = "whatever_get" />
-	<cfset api_object.component = "cfapi.component.mycustomdirectory.whatever" />
-	<cfset api_object.url = "https://www.yourserver.com/cfapi/component/mycustomdirectory/whatever.cfc?WSDL" />
+	<cfset api_object.component = "cfapi.component.mydir.whatever" />
+	<cfset api_object.url = "https://www.yourserver.com/cfapi/component/mydir/whatever.cfc?WSDL" />
 	<cfset api_object.method = "getWhatever" />
 	<cfset ArrayAppend(return_array, api_object) />
 	
