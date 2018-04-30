@@ -66,10 +66,10 @@ This is how the API maps a definition name that is used to call the API, to the 
 1) The API wrapper can be invoked like so:
 ```ColdFusion
 <!--- My API Definition #1 --->
-<cfinvoke method="executeAPICall" returnvariable="returned_array" component="cfapi.components.yourcomponent">
-    <cfinvokeargument name="api_called" value="your_api_definition" />
+<cfinvoke method="executeAPICall" returnvariable="returned_array" component="cfapi.component.mycustomdirectory.whatever">
+    <cfinvokeargument name="api_called" value="whatever_get" />
     <cfinvokeargument name="api_log" value="true" />
-    <cfinvokeargument name="api_application" value="your_application_name" />
+    <cfinvokeargument name="api_application" value="whatever_app" />
     <cfinvokeargument name="api_user" value="#session.user_id#" />
     <cfinvokeargument name="parameter_1" value="#passed_value_1#" />
 </cfinvoke>
