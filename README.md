@@ -38,11 +38,12 @@ This is how the API maps a definition name that is used to call the API, to the 
 
 1) Open /cfapi/config/settings.cfc and note the following structure:
 ```ColdFusion
+<!--- :: Whatever :: --->
 <cfset api_object = StructNew() />
-<cfset api_object.name = "api_one" />
-<cfset api_object.component = "cfcs.path.component" />
-<cfset api_object.url = "https://www.myserver.com/my_api/api_one/component.cfc?WSDL" />
-<cfset api_object.method = "invokeCfcMethod" />
+<cfset api_object.name = "whatever_get" />
+<cfset api_object.component = "cfapi.component.mycustomdirectory.whatever" />
+<cfset api_object.url = "https://www.yourserver.com/cfapi/component/mycustomdirectory/whatever.cfc?WSDL" />
+<cfset api_object.method = "getWhatever" />
 <cfset ArrayAppend(return_array, api_object) />
 ```
 
