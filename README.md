@@ -3,7 +3,7 @@
 **Questions & Answers**
 
 Q: Why shouldn't I use the native ColdFusion 2016 API?<br />
-A: The native API probably works fine, this is an alternative, and doesn't require 2016.
+A: The native API works fine, this is an alternative, and doesn't require 2016.
 
 Q: What does this package do that the ColdFusion 2016 API does not do?<br />
 A: It is a bit more automated than the native API, allowing more remote calls for more datatypes, as well as offer API usage statistics and logging per call.
@@ -11,7 +11,7 @@ A: It is a bit more automated than the native API, allowing more remote calls fo
 Q: Does this work with SOAP or Rest?<br />
 A: Although it mostly works with both, it was designed for SOAP.
 
-Q: Does this work with older versions of ColdFusion?
+Q: Does this work with older versions of ColdFusion?<br />
 A: Yes, 11 and above!
 
 **Install API Front-end**
