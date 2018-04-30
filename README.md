@@ -82,6 +82,19 @@ This is how the API maps a definition name that is used to call the API, to the 
 
 <!--- Always use local CFC invocation instead of WSDL for a single call --->
 <cfinvokeargument name="api_application" value="scheduler" />
+
+<!--- Example Function that might be called by this invoker --->
+<cffunction name="getWhatever" returntype="array" access="public" output="no" hint="Gets color codes which match the parameter">
+    <cfargument name="whatever_parameter" type="string" required="yes" />
+
+    <cfif whatever_parameter eq "dark">
+        <cfset return_array = ["#000000","#2F4F4F","#28004B"] />
+    <cfelse>
+        <cfset return_array = ["#FFFFFF","#9AFFFF","#FFDCE7"] />
+    </cfif>
+
+    <cfreturn return_array />
+</cffunction>
 ```
 
 **Blacklist Directory for Usage Statistics**
