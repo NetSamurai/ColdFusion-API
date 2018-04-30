@@ -55,10 +55,10 @@ This is how the API maps a definition name that is used to call the API, to the 
 | Column Name  | Column Type | Data Example
 | ------------- | ------------- | ------------- |
 | time_stamp | date | 03/13/2018 16:15:21 |
-| api_called | varchar(256 bytes) | test_call |
-| api_method_called | varchar(256 bytes) | getTestCall |
-| calling_application | varchar(256 bytes) | test_application |
-| calling_user_id | varchar(256 bytes) | user_one |
+| api_called | varchar(256 bytes) | whatever_get |
+| api_method_called | varchar(256 bytes) | getWhatever |
+| calling_application | varchar(256 bytes) | whatever_app |
+| calling_user_id | varchar(256 bytes) | resolved_user_id |
 | calling_user_ip | varchar(256 bytes) | 1.2.3.4 |
 | calling_parameters | clob | {theFullRequest:as,jsonKey:pair} |
 
